@@ -7,7 +7,7 @@ import (
 	http "github.com/bogdanfinn/fhttp"
 	tls_client "github.com/bogdanfinn/tls-client"
 
-	"github.com/xiaozhou26/tls_client/tlsclient"
+	"github.com/xiaozhou26/tlsclient/tlsclient"
 )
 
 func main() {
