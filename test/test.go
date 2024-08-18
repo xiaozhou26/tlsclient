@@ -5,25 +5,25 @@ import (
 	"log"
 
 	http "github.com/bogdanfinn/fhttp"
-	tlsclient "github.com/bogdanfinn/tls-client"
+	tls_client "github.com/bogdanfinn/tls-client"
 
-	"github.com/xiaozhou26/tlsclient/tls_client"
+	"github.com/xiaozhou26/tls_client/tlsclient"
 )
 
 func main() {
 	// Create a cookie jar for managing cookies
-	jar := tlsclient.NewCookieJar()
+	jar := tls_client.NewCookieJar()
 
 	// Set up the HTTP client options, including using the Chrome127 profile
-	options := []tlsclient.HttpClientOption{
-		tlsclient.WithTimeoutSeconds(30),
-		tlsclient.WithClientProfile(tls_client.Chrome127()), // Use your custom Chrome127 profile
-		tlsclient.WithNotFollowRedirects(),
-		tlsclient.WithCookieJar(jar),
+	options := []tls_client.HttpClientOption{
+		tls_client.WithTimeoutSeconds(30),
+		tls_client.WithClientProfile(tlsclient.Chrome127()), // Use your custom Chrome127 profile
+		tls_client.WithNotFollowRedirects(),
+		tls_client.WithCookieJar(jar),
 	}
 
 	// Create the HTTP client
-	client, err := tlsclient.NewHttpClient(tlsclient.NewNoopLogger(), options...)
+	client, err := tls_client.NewHttpClient(tls_client.NewNoopLogger(), options...)
 	if err != nil {
 		log.Fatalf("Failed to create HTTP client: %v", err)
 	}

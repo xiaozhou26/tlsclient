@@ -1,4 +1,4 @@
-package tls_client
+package tlsclient
 
 import (
 	"github.com/bogdanfinn/fhttp/http2"
